@@ -1,4 +1,6 @@
 import { CardCollection } from './card_collection.ts'
+import { Rank } from './rank.ts'
+import { Suit } from './suit.ts'
 import { Card } from './card.ts'
 
 test('a standard deck consists of fifty-two cards', () => {
@@ -29,4 +31,12 @@ test('the items in a standard deck are Cards', () => {
     for(let card of CardCollection.standardDeck()) {
         expect(card).toBeInstanceOf(Card)
     }
+})
+
+test('a Euchre deck has twenty-four cards', () => {
+    expect(CardCollection.deck([Rank.NINE, Rank.TEN, Rank.JACK, Rank.Queen, Rank.KING, Rank.ACE], Object.values(Suit)).size()).toBe(24)
+})
+
+test('a Spite and Malice deck has one hundred and fifty six cards', () => {
+    expect(CardCollection.standardDeck().times(3).size()).toBe(156)
 })
