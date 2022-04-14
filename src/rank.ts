@@ -1,15 +1,15 @@
 export const enum Rank {
-	Ace = 1,
-	Two,
-	Three,
-	Four,
-	Five,
-	Six,
-	Seven,
-	Eight,
-	Nine,
-	Ten,
-	Jack,
-	Queen,
-	King
+	Ace = 'ACE',
+	Two = 'TWO',
+	Three = 'THREE',
+	Four = 'FOUR',
+	Five = 'FIVE',
+	Six = 'SIX',
+	Seven = 'SEVEN',
+	Eight = 'EIGHT',
+	Nine = 'NINE',
+	Ten = 'TEN',
+	Jack = 'JACK',
+	Queen = 'QUEEN',
+	King = 'KING'
 }
