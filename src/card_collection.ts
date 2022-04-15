@@ -23,27 +23,19 @@ export class CardCollection implements Iterable<Card> {
         }
     }
 
-    times(count: int) {
-        var new_cards = []
-        for (const card of this.cards) {
-            for (let i = 0; i < count; ++i) {
-                new_cards.push(card)
-            }
-        }
-        return new CardCollection(new_cards)
-    }
-
-    static deck(ranks: Rank[], suits: Suit[]) {
+    static deck(ranks: Rank[] = Object.values(Rank), suits: Suit[] = Object.values(Suit), count: int = 1) {
         var cards = []
         for (const rank of ranks) {
             for (const suit of suits) {
-                cards.push(new Card(rank, suit))
+                for (let i = 0; i < count; ++i) {
+                    cards.push(new Card(rank, suit))
+                }
             }
         }
         return new CardCollection(cards)
     }
 
-    static standardDeck(): CardCollection {
-        return CardCollection.deck(Object.values(Rank), Object.values(Suit))
-    };
+    static standardDeck(count: int = 1) {
+        return CardCollection.deck(undefined, undefined, count)
+    }
 }

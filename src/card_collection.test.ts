@@ -34,9 +34,9 @@ test('the items in a standard deck are Cards', () => {
 })
 
 test('a Euchre deck has twenty-four cards', () => {
-    expect(CardCollection.deck([Rank.NINE, Rank.TEN, Rank.JACK, Rank.Queen, Rank.KING, Rank.ACE], Object.values(Suit)).size()).toBe(24)
+    expect(CardCollection.deck([Rank.NINE, Rank.TEN, Rank.JACK, Rank.Queen, Rank.KING, Rank.ACE]).size()).toBe(24)
 })
 
 test('a Spite and Malice deck has one hundred and fifty six cards', () => {
-    expect(CardCollection.standardDeck().times(3).size()).toBe(156)
+    expect(CardCollection.standardDeck(3).size()).toBe(156)
 })
