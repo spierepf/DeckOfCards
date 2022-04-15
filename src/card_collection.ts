@@ -23,6 +23,10 @@ export class CardCollection implements Iterable<Card> {
         }
     }
 
+    draw(): Card {
+        return this.cards.pop()
+    }
+
     static deck(ranks: Rank[] = Object.values(Rank), suits: Suit[] = Object.values(Suit), count: int = 1) {
         var cards = []
         for (const rank of ranks) {

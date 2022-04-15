@@ -34,9 +34,20 @@ test('the items in a standard deck are Cards', () => {
 })
 
 test('a Euchre deck has twenty-four cards', () => {
-    expect(CardCollection.deck([Rank.NINE, Rank.TEN, Rank.JACK, Rank.Queen, Rank.KING, Rank.ACE]).size()).toBe(24)
+    expect(CardCollection.deck([Rank.Nine, Rank.Ten, Rank.Jack, Rank.Queen, Rank.King, Rank.Ace]).size()).toBe(24)
 })
 
 test('a Spite and Malice deck has one hundred and fifty six cards', () => {
     expect(CardCollection.standardDeck(3).size()).toBe(156)
+})
+
+test('drawing a card from a singleton CardCollection gets you that card', () => {
+    expect(new CardCollection([new Card(Rank.Queen, Suit.Spades)]).draw().equals(new Card(Rank.Queen, Suit.Spades))).toBeTruthy()
+})
+
+
+test('drawing two cards from a doubleton CardCollection gets you both cards in reverse order', () => {
+    let deck = new CardCollection([new Card(Rank.Queen, Suit.Spades), new Card(Rank.Two, Suit.Clubs)])
+    expect(deck.draw().equals(new Card(Rank.Two, Suit.Clubs))).toBeTruthy()
+    expect(deck.draw().equals(new Card(Rank.Queen, Suit.Spades))).toBeTruthy()
 })
