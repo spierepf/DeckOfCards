@@ -1,5 +1,8 @@
 export class Card {
 	constructor(rank: Rank, suit: Suit) {
+		if(rank === undefined || suit === undefined) {
+			throw TypeError("Neither the rank nor suit of a Card may be undefined")
+		}
 		this.rank = rank
 		this.suit = suit
 	};

@@ -2,6 +2,18 @@ import { Rank } from "./rank.ts";
 import { Suit } from "./suit.ts";
 import { Card } from "./card.ts";
 
+test('attempting to construct a card with an undefined rank throws Error', () => {
+	expect(() => {
+		new Card(undefined, Suit.Spades)
+	}).toThrow(TypeError)
+})
+
+test('attempting to construct a card with an undefined suit throws Error', () => {
+	expect(() => {
+		new Card(Rank.Queen, undefined)
+	}).toThrow(TypeError)
+})
+
 test('a card is equal to another card of the same rank and suit', () => {
 	expect(new Card(Rank.Queen, Suit.Spades).equals(new Card(Rank.Queen, Suit.Spades))).toBeTruthy()
 })
