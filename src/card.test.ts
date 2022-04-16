@@ -14,6 +14,18 @@ test('attempting to construct a card with an undefined suit throws Error', () =>
 	}).toThrow(TypeError)
 })
 
+test('attempting to construct a card with a null rank throws Error', () => {
+	expect(() => {
+		new Card(null, Suit.Spades)
+	}).toThrow(TypeError)
+})
+
+test('attempting to construct a card with a null suit throws Error', () => {
+	expect(() => {
+		new Card(Rank.Queen, null)
+	}).toThrow(TypeError)
+})
+
 test('a card is equal to another card of the same rank and suit', () => {
 	expect(new Card(Rank.Queen, Suit.Spades).equals(new Card(Rank.Queen, Suit.Spades))).toBeTruthy()
 })
