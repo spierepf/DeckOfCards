@@ -2,7 +2,8 @@ import { Rank } from "./rank";
 import { Suit } from "./suit";
 
 export class Card {
-  constructor(rank: Rank, suit: Suit) {
+
+  constructor(readonly rank: Rank, readonly suit: Suit) {
     if (!rank || !suit) {
       throw TypeError(
         "Neither the rank nor suit of a Card may be undefined or null"
