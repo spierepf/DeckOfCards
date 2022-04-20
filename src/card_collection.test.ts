@@ -58,6 +58,11 @@ test("drawing a card from a singleton CardCollection gets you that card", () => 
   ).toBeTruthy();
 });
 
+test("drawing a card from a CardCollection removes that card from the CardCollection", () => {
+  let collection = CardCollection.standardDeck();
+  expect(collection.size()).toBe(51);
+});
+
 test("drawing two cards from a doubleton CardCollection gets you both cards in reverse order", () => {
   let deck = new CardCollection([
     new Card(Rank.Queen, Suit.Spades),
