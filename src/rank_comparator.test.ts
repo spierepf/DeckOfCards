@@ -20,12 +20,12 @@ test("a rank comparator constructed with a subset of ranks leaves comparisons in
   ).toBeUndefined();
 });
 
-test("two is higher thant ace in king-high ordering", () => {
+test("two is higher than ace in king-high ordering", () => {
   expect(RankComparator.kingHigh().compare(Rank.Two, Rank.Ace)).toBeGreaterThan(
     0
   );
 });
 
-test("king is lower thant ace in ace-high ordering", () => {
+test("king is lower than ace in ace-high ordering", () => {
   expect(RankComparator.aceHigh().compare(Rank.King, Rank.Ace)).toBeLessThan(0);
 });

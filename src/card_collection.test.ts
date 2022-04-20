@@ -60,6 +60,7 @@ test("drawing a card from a singleton CardCollection gets you that card", () => 
 
 test("drawing a card from a CardCollection removes that card from the CardCollection", () => {
   let collection = CardCollection.standardDeck();
+  collection.draw()
   expect(collection.size()).toBe(51);
 });
 
