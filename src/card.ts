@@ -2,7 +2,6 @@ import { Rank } from "./rank";
 import { Suit } from "./suit";
 
 export class Card {
-
   constructor(readonly rank: Rank, readonly suit: Suit) {
     if (!rank || !suit) {
       throw TypeError(

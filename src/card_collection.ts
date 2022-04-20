@@ -3,11 +3,11 @@ import { Suit } from "./suit";
 import { Card } from "./card";
 
 export class CardCollection implements Iterable<Card> {
-  constructor(cards: Card[]) {
+  constructor(readonly cards: Card[]) {
     this.cards = cards;
   }
 
-  size(): int {
+  size(): number {
     return this.cards.length;
   }
 
@@ -29,11 +29,11 @@ export class CardCollection implements Iterable<Card> {
 
   // https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
   shuffle(): CardCollection {
-    let currentIndex = this.cards.length,
-      randomIndex;
+    let currentIndex = this.cards.length;
+    let randomIndex: number;
 
     // While there remain elements to shuffle.
-    while (currentIndex != 0) {
+    while (currentIndex !== 0) {
       // Pick a remaining element.
       randomIndex = Math.floor(Math.random() * currentIndex);
       currentIndex--;
@@ -50,9 +50,9 @@ export class CardCollection implements Iterable<Card> {
   static deck(
     ranks: Rank[] = Object.values(Rank),
     suits: Suit[] = Object.values(Suit),
-    count: int = 1
+    count: number = 1
   ) {
-    var cards = [];
+    const cards = [];
     for (const rank of ranks) {
       for (const suit of suits) {
         for (let i = 0; i < count; ++i) {
@@ -63,7 +63,7 @@ export class CardCollection implements Iterable<Card> {
     return new CardCollection(cards);
   }
 
-  static standardDeck(count: int = 1) {
+  static standardDeck(count: number = 1) {
     return CardCollection.deck(undefined, undefined, count);
   }
 }
