@@ -1,4 +1,4 @@
-export const enum Suit {
+export enum Suit {
   Clubs = "CLUBS",
   Diamonds = "DIAMONDS",
   Hearts = "HEARTS",

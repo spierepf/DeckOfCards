@@ -1,4 +1,4 @@
-export const enum Rank {
+export enum Rank {
   Ace = "ACE",
   Two = "TWO",
   Three = "THREE",
